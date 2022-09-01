@@ -1,0 +1,49 @@
+manifestVersion: 1
+id: crater
+category: Finance
+name: Crater Invoices
+version: "6.0.6"
+tagline: Open Source Invoicing Solution for Individuals & Businesses
+description: >-
+  Crater is an open-source web & mobile app that helps you track expenses, payments & create professional invoices & estimates.
+
+
+  Invoices
+  - Create and send professional invoices to clients and save time for what really matters.
+
+  Estimates
+  - Create a quick and detailed quote including prices, discounts, inventory and more.
+
+  Payments
+  - Get a ready to go payments infrastructure powered by Stripe Custom Connect.
+
+  Custom Templates
+  - Customize your invoices by creating custom file based templates to take it to the next level.
+
+  White Labeling
+  - Let your customers login to your customer portal with your own branding to manage and pay invoices easily.
+
+  Instant Account Receivables
+  - Offer net terms for instant payments on outstanding invoices.
+
+  B2B BNPL
+  - Provide deferred payments on invoices on 30, 60 and 90 days with B2B Buy Now Pay Later.
+
+  Taxes
+  - Input different tax types & calculate them as simple or compound tax per-item or directly on invoice total.
+
+
+developer: Crater-Invoice
+website: https://craterapp.com
+dependencies: []
+repo: https://github.com/crater-invoice/crater
+support: https://discord.gg/nyTstm6
+port: 2420
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+torOnly: false
