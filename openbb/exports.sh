@@ -1,0 +1,2 @@
+export APP_OPENBB_IP="10.21.21.35"
+export APP_OPENBB_PORT="2420"

@@ -1,0 +1,71 @@
+manifestVersion: 1
+id: openbb
+category: Finance
+name: OpenBB Terminal
+version: "1.7.0"
+tagline: Investment Research for Everyone, Anywhere.
+description: >
+  Python-based integrated environment for investment research that 
+  leverages state-of-the-art Data Science and Machine Learning technologies. 
+  Navigate through some of the 500+ functionalities offered by OpenBB Terminal.
+
+    - Stocks
+   The most advanced and extensive menu containing a multitude of data sources 
+   as well as a large variety of fundamental, technical and quantitative techniques. 
+
+    - Crypto
+  Given our open source nature and the decentralisation associated with digital assets, 
+  we are investing a lot of resources on this industry.
+
+    - ETF 
+  To encapsulate industries, sectors or entire markets, Exchange Traded Funds (ETFs) 
+  offer a wide-variety of options next to allowing for a passively investing style. 
+  The terminal provides a variety of options to find and analyse the ETF that meets your needs.
+
+    - ECONOMY 
+  As we saw from COVID, and multiple times in history, the overall economy has a big effect 
+  on the way we invest. This menu gives you an insight into interest and inflation rates, 
+  commodities, futures, economic impact events and even a fear-greed index.
+
+    - ECONOMETRICS
+  Much of the Financial theory comes from Econometrics, the application of statistical methods to economic data. 
+  With this menu we provide the user the ability to use custom data to perform these advanced techniques 
+  including a variety of statistical tests and multi-linear regression models.
+
+    - PORTFOLIO
+  As an investor, you must be frustrated over the affordable existing tools to help you manage your portfolio. 
+  We are too. This menu will help every investor track, assess and optimize their portfolio. Plus, 
+  we allow an unparalleled level of customization.
+
+    - FOREX
+  Fully started by an open source contributor, which shows the power of the community. 
+  This menu will help to understand better the currency fluctuations during economic events.
+
+    - MUTUAL FUNDS
+  Get a good overview of the available mutual funds within the market. 
+  This will help you building your decision in terms of selecting a mutual fund to go with.
+
+    - ALTERNATIVE
+  An initial start to a menu that will expand greatly over time. Alternative data is crucial to making better informed decisions.
+
+    - REPORTS
+  This menu gives you the ability to create a due diligent report template with jupyter notebook 
+  and run it with different parameters each time. It streamlines and saves you something more important than money: time.
+
+    - DASHBOARDS
+  Build interactive dashboards to have a more interactive experience with the data. This will help you to understand the market faster.
+
+developer: OpenBB
+website: https://openbb.co/
+dependencies:
+repo: https://github.com/OpenBB-finance/OpenBBTerminal
+support: https://discord.gg/xPHTuHCmuV
+port: 2420
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+  - 4.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
