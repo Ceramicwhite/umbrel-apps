@@ -1,0 +1,46 @@
+manifestVersion: 1
+id: cinny
+category: Networking
+name: Cinny
+version: "2.1.3"
+tagline: A matrix client with simple, elegant and secure interface.
+description: >-
+  A Matrix client focusing primarily on simple, elegant and secure interface. 
+  The main goal is to have an instant messaging application that is easy on 
+  people and has a modern touch.
+
+  - Organized
+
+    Navigation is easy now because we organized DMs separate from channels.
+
+  - No more clutter
+
+    You will see what's necessary to give you a better visual feedback.
+
+  - Input that matters
+
+    An interface which adapts to your actions without making you feel uncomfortable.
+
+  - Calm visual
+
+    Everything is properly aligned and formatted to give you a calm feeling.
+
+  You can connect it to the Synapse installation running on your Umbrel. 
+  An easy way to get started is to install the "Synapse" Matrix homserver on 
+  your Umbrel and change Cinny's Homserver URL from matrix.org to your Synapse's 
+  homeserver URL (http://umbrel.local:8008 or http://<synapse-tor-hidden-service-url). 
+
+developer: cinnyapp
+website: https://cinny.in
+dependencies: []
+repo: https://github.com/cinnyapp/cinny
+support: https://matrix.to/#/#cinny:matrix.org
+port: 6420
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+

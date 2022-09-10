@@ -1,0 +1,2 @@
+export APP_CINNY_IP="10.21.21.110"
+export APP_CINNY_PORT="1220"
