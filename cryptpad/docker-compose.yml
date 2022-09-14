@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: $APP_CRYPTPAD_IP
+      APP_PORT: 3000
+
+  web:
+    image: ceramicwhite/cryptpad:v5.0.0@sha256:21d9df213bedef30e4dd687285e2d95eef4ae6c45aa1ba914a0b5531d5d6fa7c
+    restart: on-failure
+    stop_grace_period: 1m
+    init: true
+    user: "1000:1000"
+    volumes:
+    - ${APP_DATA_DIR}/data/blob:/cryptpad/blob
+    - ${APP_DATA_DIR}/data/block:/cryptpad/block
+    - ${APP_DATA_DIR}/data/customize:/cryptpad/customize
+    - ${APP_DATA_DIR}/data/data:/cryptpad/data
+    - ${APP_DATA_DIR}/data/files:/cryptpad/datastore
+    environment:
+      - CPAD_CONF=/cryptpad/config/config.js
+      - APP_CONF=/customize/application_config.js
+      - INTERNAL_MAIN_DOMAIN=localhost:3000
+      - HTTP_ADDRESS=0.0.0.0
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    ulimits:
+      nofile:
+        soft: 1000000
+        hard: 1000000
+    networks:
+      default:
+        ipv4_address: $APP_CRYPTPAD_IP

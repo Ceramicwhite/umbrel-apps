@@ -1,0 +1,43 @@
+manifestVersion: 1
+id: cryptpad
+category: Files
+name: Cryptpad
+version: "5.0.0"
+tagline: Collaboration suite, end-to-end encrypted and open-source
+description: >-
+  CryptPad is a collaboration suite that is end-to-end-encrypted and open-source. 
+  It is built to enable collaboration, synchronizing changes to documents in real time. 
+  Because all data is encrypted, the service and its administrators have no way
+   of seeing the content being edited and stored.
+
+
+  - A full suite of applications
+
+    CryptPad provides a full-fledged office suite with all the tools necessary for productive collaboration. 
+    Applications include: Rich Text, Spreadsheets, Code/Markdown, Kanban, Slides, Whiteboard and Forms.
+
+  - End-to-end encrypted
+
+    All data on CryptPad is encrypted in the browser. This means no readable data leaves the user's device. 
+    Even the service administrators cannot see the content of documents or user data.
+
+  - Private Collaboration
+
+    CryptPad is built to enable collaboration. It synchronizes changes to documents in real time. 
+    Because all data is encrypted, the service and its administrators have no way 
+    of seeing the content being edited and stored.
+
+developer: XWiki
+website: https://cryptpad.org/
+dependencies: []
+repo: https://github.com/xwiki-labs/cryptpad
+support: https://fosstodon.org/@cryptpad
+port: 1220
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+
