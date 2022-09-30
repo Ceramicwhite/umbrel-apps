@@ -8,3 +8,15 @@ export APP_STACKS_API_IP="10.21.21.98"
 export APP_STACKS_API_PORT="3999"
 export APP_STACKS_DB_IP="10.21.21.97"
 export APP_STACKS_DB_PORT="5432"
+
+#!/bin/sh
+
+CONFIG="/home/jazzy/umbrel/app-data/stacks-node/data/config/Config.toml"
+
+set -e
+
+     sed -i  -e "s@APP_BITCOIN_NODE_IP@$APP_BITCOIN_NODE_IP@" \
+             -e "s@APP_BITCOIN_RPC_USER@$APP_BITCOIN_RPC_USER@" \
+             -e "s@APP_BITCOIN_RPC_PASS@$APP_BITCOIN_RPC_PASS@" \
+             -e "s@APP_BITCOIN_RPC_PORT@$APP_BITCOIN_RPC_PORT@" \
+             -e "s@APP_BITCOIN_P2P_PORT@$APP_BITCOIN_P2P_PORT@" "$CONFIG"
