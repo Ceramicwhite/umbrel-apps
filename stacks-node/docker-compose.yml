@@ -9,9 +9,9 @@ services:
 
   stacks-blockchain:
     image: ceramicwhite/stacks-blockchain:v2.05.0.3.0@sha256:953db9197b4615345f7e096d9e7b3a1b27a759a32a4be3190f6822064aa2dd18
-    init: true
+    #init: true
     restart: on-failure
-    stop_grace_period: 1m
+    stop_grace_period: 1s
     #user: "1000:1000"
     command:
       [
@@ -24,17 +24,17 @@ services:
       - $APP_STACKS_CORE_RPC_PORT:$APP_STACKS_CORE_RPC_PORT
       - $APP_STACKS_CORE_EVENT_PORT:$APP_STACKS_CORE_EVENT_PORT
     volumes:
-      - ${APP_DATA_DIR}/persistent-data/stacks-blockchain:/root/stacks-node/data
-      - ${APP_DATA_DIR}/stacks-node/config:/src/stacks-node
+      - ${APP_DATA_DIR}/data/stacks-blockchain:/root/stacks-blockchain/data
+      - ${APP_DATA_DIR}/data/config:/src/stacks-blockchain
     networks:
       default:
         ipv4_address: $APP_STACKS_BLOCKCHAIN_IP
 
   stacks-blockchain-api:
-    image: ceramicwhite/stacks-blockchain-api:v5.0.1@sha256:b7fb9fa5b1a7d65e583f2e2d9f10c8e20b31303772c4bd8734ad31618e4d86e9
-    init: true
+    image: ceramicwhite/stacks-blockchain-api:v5.0.1@sha256:29cfba462e0e1978f794234f036b4ad9a1c5b6bfafc26a6cc8ff0226b69526a0
+    #init: true
     restart: on-failure
-    stop_grace_period: 1m
+    stop_grace_period: 1s
     environment:
       NODE_ENV: production
       PG_HOST: postgres
@@ -44,17 +44,20 @@ services:
       PG_DATABASE: postgres
       STACKS_CHAIN_ID: 0x00000001
       V2_POX_MIN_AMOUNT_USTX: 90000000260
-      STACKS_CORE_EVENT_PORT: 3700
+      STACKS_CORE_EVENT_PORT: $APP_STACKS_CORE_EVENT_PORT
       STACKS_CORE_EVENT_HOST: 0.0.0.0
       STACKS_BLOCKCHAIN_API_PORT: $APP_STACKS_API_PORT
       STACKS_BLOCKCHAIN_API_HOST: 0.0.0.0
       STACKS_BLOCKCHAIN_API_DB: pg
       STACKS_CORE_RPC_HOST: stacks-blockchain
-      STACKS_CORE_RPC_PORT: ${APP_STACKS_CORE_RPC_PORT:-3700}
+      STACKS_CORE_RPC_PORT: $APP_STACKS_CORE_RPC_PORT
       #STACKS_API_ENABLE_FT_METADATA: 1
       #STACKS_API_ENABLE_NFT_METADATA: 1
       #BNS_IMPORT_DIR=/bns-data
       STACKS_EXPORT_EVENTS_FILE: /tmp/event-replay/stacks-node-events.tsv
+    volumes:
+      - ${APP_DATA_DIR}/data/bns-data:/bns-data
+      - ${APP_DATA_DIR}/data/event-replay:/tmp/event-replay
     ports:
       - $APP_STACKS_CORE_EVENT_PORT:$APP_STACKS_CORE_EVENT_PORT
       - $APP_STACKS_API_PORT:$APP_STACKS_API_PORT
@@ -67,11 +70,11 @@ services:
   postgres:
     image: postgres:13.7@sha256:03652c675ae177af98ddd50f9f4b4b2cf8ad38d0e116aa68fe670fbc2cf250fc
     restart: on-failure
-    stop_grace_period: 1m
+    stop_grace_period: 1s
     #ports:
     #  - $APP_STACKS_DB_PORT:$APP_STACKS_DB_PORT
     volumes:
-      - ${APP_DATA_DIR}/persistent-data/postgres:/var/lib/postgresql/data
+      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: umbrel
       POSTGRES_PASSWORD: moneyprintergobrrr
@@ -80,3 +83,4 @@ services:
     networks:
       default:
         ipv4_address: $APP_STACKS_DB_IP
+
