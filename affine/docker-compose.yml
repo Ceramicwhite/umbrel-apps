@@ -1,11 +1,13 @@
+version: "3.7"
+
 services:
 
   app_proxy:
     environment:
-      APP_HOST: affine_web_1
+      APP_HOST: affine_server_1
       APP_PORT: 3010
 
-  web:
+  server:
     image: ghcr.io/toeverything/affine-graphql:stable@sha256:47c4dcef7354c99a29b71fcabf2b5361eb87e7c25a5141ad0ddb3b550305fa0a
     restart: on-failure
     init: true
@@ -23,10 +25,8 @@ services:
       - ${APP_DATA_DIR}/data/config:/root/.affine/config
       - ${APP_DATA_DIR}/data/storage/blob:/root/.affine/storage
     depends_on:
-      redis:
-        condition: service_healthy
-      db:
-        condition: service_healthy
+      - redis
+      - db
 
   redis:
     image: redis@sha256:e647cfe134bf5e8e74e620f66346f93418acfc240b71dd85640325cb7cd01402
